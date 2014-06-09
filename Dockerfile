@@ -1,8 +1,7 @@
 #
 # CannyOS User Storage Dropbox
 #
-# https://github.com/intlabs/cannyos-user-application-broadway-base-base
-cannyos-user-application-broadway-base-fedora
+# https://github.com/intlabs/cannyos-user-application-broadway-base-fedora
 #
 # Copyright 2014 Pete Birley
 #
