@@ -37,15 +37,23 @@ WORKDIR /
 #Allow remote root login with password
 RUN sed -i -e 's/PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ssh/sshd_config && /etc/init.d/ssh restart
 
-#Install the broadway gtk3 ppa for ubuntu
+#Install the gtk3 & Broadway
 RUN yum install -y gtk3
-#yum install -y yum-utils
-#yum-builddep libreoffice -y
-#git clone git://anongit.freedesktop.org/libreoffice/core libreoffice
-#cd libreoffice/
+
+#Build and install libreoffice with broadway support
+WORKDIR /CannyOS/Host
+RUN yum install -y yum-utils && \
+yum-builddep libreoffice -y && \
+yum install -y gstreamer-devel gstreamer-plugins-base-devel pangox-compat&& \
+wget http://download.documentfoundation.org/libreoffice/src/4.2.5/libreoffice-4.2.5.1.tar.xz && \
+tar xvfJ libreoffice-4.2.5.1.tar.xz && \
+cd libreoffice* && \
+./autogen.sh --enable-gtk3 --without-java --disable-firebird-sdbc && \
+make && \
+make install
 
 #Install gedit
-RUN yum install -y gedit
+#RUN yum install -y gedit
 
 
 #****************************************************

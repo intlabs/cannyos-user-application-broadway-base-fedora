@@ -61,5 +61,5 @@ sudo docker run -i -t --rm \
  --volume "/CannyOS/build/cannyos-user-application-broadway-base-fedora":"/CannyOS/Host" \
  --name "cannyos-user-application-broadway-base-fedora" \
  --user "root" \
- -p 80:80 \
+ -p 82:80 \
  intlabs/cannyos-user-application-broadway-base-fedora 
