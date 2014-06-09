@@ -40,6 +40,9 @@ RUN sed -i -e 's/PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ss
 #Install the gtk3 & Broadway
 RUN yum install -y gtk3
 
+#Install gedit
+#RUN yum install -y gedit
+
 #Build and install libreoffice with broadway support
 WORKDIR /CannyOS/Host
 RUN yum install -y yum-utils && \
@@ -51,10 +54,6 @@ cd libreoffice* && \
 ./autogen.sh --enable-gtk3 --without-java --disable-firebird-sdbc && \
 make && \
 make install
-
-#Install gedit
-#RUN yum install -y gedit
-
 
 #****************************************************
 #                                                   *
