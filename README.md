@@ -19,17 +19,21 @@ This repository contains the *Dockerfile* and *associated files* for setting up 
 2. You can then build the container set from the via entering:
 
 	Manual building can be done with the following:
-	`sudo docker build -t="intlabs/cannyos-user-application-broadway-fedora-base" github.com/intlabs/cannyos-user-application-broadway-fedora-base`
+	`sudo docker build -t="intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora" github.com/intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora`
 
 	Two stage building should not be required but is avaliblible via:
-	`bash <(curl -s https://raw.githubusercontent.com/intlabs/cannyos-user-application-broadway-fedora-base/master/Build.sh)`
+	`bash <(curl -s https://raw.githubusercontent.com/intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora/master/Build.sh)`
 
 	
 ### Usage
 
 * this will run and drop you into a session with privileges to run FUSE:
 
-`sudo docker run -it --rm --privileged=true --lxc-conf="native.cgroup.devices.allow = c 10:229 rwm" intlabs/cannyos-user-application-broadway-fedora-base`
+`sudo docker run -it --rm --privileged=true --lxc-conf="native.cgroup.devices.allow = c 10:229 rwm" intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora`
 
 
 # Copyright 2014 Pete Birley

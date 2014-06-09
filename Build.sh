@@ -1,8 +1,10 @@
 #!/bin/sh
 #
-# CannyOS cannyos-user-application-broadway-fedora-base container build script
+# CannyOS cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora container build script
 #
-# https://github.com/intlabs/cannyos-user-application-broadway-fedora-base
+# https://github.com/intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora
 #
 # Copyright 2014 Pete Birley
 #
@@ -19,7 +21,8 @@
 # limitations under the License.
 #
 clear
-curl https://raw.githubusercontent.com/intlabs/cannyos-user-application-broadway-fedora-base/master/CannyOS/CannyOS.splash
+curl https://raw.githubusercontent.com/intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora/master/CannyOS/CannyOS.splash
 #     *****************************************************
 #     *                                                   *
 #     *        _____                    ____  ____        *
@@ -37,7 +40,9 @@ echo "*****************************************************"
 echo ""
 
 # Build base container image
-sudo docker build -t="intlabs/cannyos-user-application-broadway-fedora-base" github.com/intlabs/cannyos-user-application-broadway-fedora-base
+sudo docker build -t="intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora" github.com/intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora
 
 echo ""
 echo "*****************************************************"
@@ -48,18 +53,24 @@ echo "*****************************************************"
 echo ""
 
 # Make shared directory on host
-sudo mkdir -p "/CannyOS/build/cannyos-user-application-broadway-fedora-base"
+sudo mkdir -p "/CannyOS/build/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora"
 # Ensure that there it is clear
-sudo rm -r -f "/CannyOS/build/cannyos-user-application-broadway-fedora-base/*"
+sudo rm -r -f "/CannyOS/build/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora/*"
 
 # Remove any existing containers
-sudo docker stop cannyos-user-application-broadway-fedora-base
+sudo docker stop cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora
 
 # Launch built base container image
 sudo docker run -i -t --rm \
  --privileged=true --lxc-conf="native.cgroup.devices.allow = c 10:229 rwm" \
- --volume "/CannyOS/build/cannyos-user-application-broadway-fedora-base":"/CannyOS/Host" \
- --name "cannyos-user-application-broadway-fedora-base" \
+ --volume "/CannyOS/build/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora":"/CannyOS/Host" \
+ --name "cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora" \
  --user "root" \
  -p 80:80 \
- intlabs/cannyos-user-application-broadway-fedora-base 
+ intlabs/cannyos-user-application-broadway-base-base
+cannyos-user-application-broadway-base-fedora 
